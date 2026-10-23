@@ -31,8 +31,9 @@ app.use( function(err, req, res, next) {
     res.status(500).render('error')
 })
 
-// Start server running 
-let server = app.listen(process.env.PORT || 3000, function() {
-    console.log('Express server running on port', server.address().port)
+// Identify port, or use default of 3000, then start server running 
+const port = process.env.PORT || 3000
+const server = app.listen(port, function() {
+    console.log('Express server running on port', port)
 })
 
